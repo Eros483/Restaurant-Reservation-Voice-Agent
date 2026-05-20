@@ -1,0 +1,74 @@
+{
+  "project": "swiggy-dineout-voice-agent",
+  "last_updated": "2026-05-20",
+  "summary": {
+    "total": 1,
+    "completed": 0,
+    "in_progress": 0,
+    "planned": 1,
+    "tests_passing": 0,
+    "tests_failing": 0,
+    "tests_missing": 1
+  },
+  "features": [
+    {
+      "id": "F001",
+      "name": "Language Classifier Training",
+      "description": "Train, evaluate, and quantize a 5-class audio language classifier (hi, en, te, bn, mr) on IndicVoices dataset with telephony augmentation. Target: >95% accuracy, <15ms latency, int8 quantized ~6MB.",
+      "status": "planned",
+      "priority": "high",
+      "module": "ml",
+      "design_doc": "docs/design.md",
+      "tests": {
+        "status": "missing",
+        "files": [],
+        "notes": ""
+      },
+      "subtasks": [
+        {
+          "id": "F001-1",
+          "name": "Filter IndicVoices to 5 target languages",
+          "status": "planned"
+        },
+        {
+          "id": "F001-2",
+          "name": "Balance classes (undersample/oversample)",
+          "status": "planned"
+        },
+        {
+          "id": "F001-3",
+          "name": "Implement telephony augmentation pipeline",
+          "status": "planned"
+        },
+        {
+          "id": "F001-4",
+          "name": "Define train/val/test split (80/10/10)",
+          "status": "planned"
+        },
+        {
+          "id": "F001-5",
+          "name": "Select and train encoder backbone with classification head",
+          "status": "planned"
+        },
+        {
+          "id": "F001-6",
+          "name": "Evaluate: per-language F1, 5-class accuracy, confusion matrix",
+          "status": "planned"
+        },
+        {
+          "id": "F001-7",
+          "name": "int8 quantize and export to ONNX",
+          "status": "planned"
+        },
+        {
+          "id": "F001-8",
+          "name": "Benchmark inference latency",
+          "status": "planned"
+        }
+      ],
+      "notes": "Part of Phase 1 Track 2. Classifier must run on raw audio before STT to avoid circular dependency. Apply telephony augmentation to 60% of training data only.",
+      "added": "2026-05-20",
+      "completed": null
+    }
+  ]
+}
